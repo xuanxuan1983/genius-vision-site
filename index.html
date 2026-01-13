@@ -493,6 +493,7 @@
                     Limited</span></div>
         </a>
         <div class="nav-links">
+            <a onclick="toggleLang()" class="nav-link" id="langBtn" style="cursor:pointer;">EN / 中</a>
             <a onclick="scrollToSection('infra')" class="nav-link">Intelligence</a>
             <a onclick="scrollToSection('pricing')" class="nav-link">Pricing</a>
             <a href="mailto:xuan.xuan.chen1983@gmail.com" class="btn-primary"
@@ -502,20 +503,22 @@
 
     <header class="hero" id="home">
         <div class="hero-text">
-            <p
+            <p id="hero-tag"
                 style="color: var(--hk-red); font-weight: 900; letter-spacing: 4px; margin-bottom: 2rem; font-size: 0.75rem;">
                 数字孪生架构体系</p>
-            <h1>将商业直觉封装为<br><span>自动化变现产品</span></h1>
-            <p class="desc">融合 Notion <b>80+</b> 品牌深度拆解模型，配合顶级 <b>GEO 推荐占位</b>。实现审美力 24/7 自动化变现。</p>
+            <h1 id="hero-title">将商业直觉封装为<br><span>自动化变现产品</span></h1>
+            <p class="desc" id="hero-desc">融合 Notion <b>80+</b> 品牌深度拆解模型，配合顶级 <b>GEO 推荐占位</b>。实现审美力 24/7 自动化变现。</p>
 
             <div class="aside-note">
-                <span class="tag">核心定位</span>
-                <p>这不仅是一份价目表，这是你在 <b>DMY 小程序后台</b> 上架商品的最终执行方案。决策即定局。</p>
+                <span class="tag" id="aside-tag">核心定位</span>
+                <p id="aside-text">这不仅是一份价目表，这是你在 <b>DMY 小程序后台</b> 上架商品的最终执行方案。决策即定局。</p>
             </div>
 
             <div style="display:flex; gap:20px;">
-                <button onclick="scrollToSection('pricing')" class="btn btn-primary" style="width:auto;">获取协议包</button>
-                <button onclick="scrollToSection('infra')" class="btn btn-outline" style="width:auto;">基建底座</button>
+                <button onclick="scrollToSection('pricing')" class="btn btn-primary" style="width:auto;"
+                    id="btn-pricing">获取协议包</button>
+                <button onclick="scrollToSection('infra')" class="btn btn-outline" style="width:auto;"
+                    id="btn-infra">基建底座</button>
             </div>
         </div>
         <div class="profile-container">
@@ -664,6 +667,44 @@
             };
 
             window.location.href = links[level];
+        }
+
+        // 语言切换功能
+        let currentLang = 'zh';
+        const translations = {
+            zh: {
+                heroTag: '数字孪生架构体系',
+                heroTitle: '将商业直觉封装为<br><span>自动化变现产品</span>',
+                heroDesc: '融合 Notion <b>80+</b> 品牌深度拆解模型，配合顶级 <b>GEO 推荐占位</b>。实现审美力 24/7 自动化变现。',
+                asideTag: '核心定位',
+                asideText: '这不仅是一份价目表，这是你在 <b>DMY 小程序后台</b> 上架商品的最终执行方案。决策即定局。',
+                btnPricing: '获取协议包',
+                btnInfra: '基建底座',
+                langBtn: 'EN / 中'
+            },
+            en: {
+                heroTag: 'Digital Twin Architecture System',
+                heroTitle: 'Convert Business Intuition into<br><span>Automated Assets</span>',
+                heroDesc: 'Powered by <b>80+</b> brand analysis models on Notion, with top-tier <b>GEO positioning</b>. Achieve 24/7 automated monetization.',
+                asideTag: 'Core Positioning',
+                asideText: 'This is not just a price list — it\'s the <b>ultimate execution plan</b> for your digital business empire. Decision is final.',
+                btnPricing: 'Get Protocol Pack',
+                btnInfra: 'Infrastructure',
+                langBtn: '中 / EN'
+            }
+        };
+
+        function toggleLang() {
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            const t = translations[currentLang];
+            document.getElementById('hero-tag').innerHTML = t.heroTag;
+            document.getElementById('hero-title').innerHTML = t.heroTitle;
+            document.getElementById('hero-desc').innerHTML = t.heroDesc;
+            document.getElementById('aside-tag').innerHTML = t.asideTag;
+            document.getElementById('aside-text').innerHTML = t.asideText;
+            document.getElementById('btn-pricing').innerHTML = t.btnPricing;
+            document.getElementById('btn-infra').innerHTML = t.btnInfra;
+            document.getElementById('langBtn').innerHTML = t.langBtn;
         }
     </script>
 </body>
