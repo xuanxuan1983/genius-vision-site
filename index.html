@@ -530,24 +530,26 @@
 
     <section class="infrastructure" id="infra">
         <div class="infra-intro">
-            <h2>数字基建：智慧引擎</h2>
-            <p style="color: var(--text-dim);">拒绝低效率的肉身交付。为您构建闭环的一人公司自动化架构。</p>
+            <h2 id="infra-title">数字基建：智慧引擎</h2>
+            <p style="color: var(--text-dim);" id="infra-desc">拒绝低效率的肉身交付。为您构建闭环的一人公司自动化架构。</p>
         </div>
 
         <div class="infra-manifesto">
-            <div class="manifesto-body">
+            <div class="manifesto-body" id="manifesto-body">
                 利用飞书的<b>极速响应</b>与 Notion 的<b>深度沉淀</b>，将实战经验转化为<b>可规模化的数字资产</b>。自动化同步已就绪。
             </div>
         </div>
 
         <div class="infra-grid">
             <div class="infra-card">
-                <h3><i data-lucide="box"></i> 简藏 (JianCang)</h3>
-                <p style="font-size:0.9rem; color:var(--text-dim);">资产分拣中心。微信文章一键资产化，自动流向飞书与 Notion。</p>
+                <h3 id="jiancang-title"><i data-lucide="box"></i> 简藏 (JianCang)</h3>
+                <p style="font-size:0.9rem; color:var(--text-dim);" id="jiancang-desc">资产分拣中心。微信文章一键资产化，自动流向飞书与 Notion。
+                </p>
             </div>
             <div class="infra-card">
-                <h3><i data-lucide="database"></i> 智库积淀</h3>
-                <p style="font-size:0.9rem; color:var(--text-dim);">基于 80+ 品牌数据，确保 Agent 输出具备真实的商业厚度。</p>
+                <h3 id="knowledge-title"><i data-lucide="database"></i> 智库积淀</h3>
+                <p style="font-size:0.9rem; color:var(--text-dim);" id="knowledge-desc">基于 80+ 品牌数据，确保 Agent
+                    输出具备真实的商业厚度。</p>
             </div>
         </div>
     </section>
@@ -557,49 +559,49 @@
         <div class="pricing-grid">
             <!-- Level 1 -->
             <div class="price-card" id="card-l1" onclick="selectCard('l1')">
-                <div class="price-name">LEVEL 1 / 工具版</div>
-                <h3 class="price-title">数字基建启动包</h3>
+                <div class="price-name" id="l1-name">LEVEL 1 / 工具版</div>
+                <h3 class="price-title" id="l1-title">数字基建启动包</h3>
                 <div class="price-tag">$299<span> USD</span></div>
                 <div style="font-size:0.75rem; color:var(--text-dim); margin-top:-10px; margin-bottom:15px;">≈ ¥2,180
                 </div>
                 <ul class="feature-list">
-                    <li class="feature-item"><i data-lucide="check" size="14"></i> <b>HTML 生产力三件套</b></li>
-                    <li class="feature-item"><i data-lucide="check" size="14"></i> 3个入门级 Agent 授权</li>
+                    <li class="feature-item" id="l1-f1"><i data-lucide="check" size="14"></i> <b>HTML 生产力三件套</b></li>
+                    <li class="feature-item" id="l1-f2"><i data-lucide="check" size="14"></i> 3个入门级 Agent 授权</li>
                 </ul>
-                <button onclick="checkout('L1', event)" class="btn btn-outline">立即获取</button>
+                <button onclick="checkout('L1', event)" class="btn btn-outline" id="l1-btn">立即获取</button>
             </div>
 
             <!-- Level 2: 默认 Active -->
             <div class="price-card active" id="card-l2" onclick="selectCard('l2')">
-                <div class="hot-badge">HOT / 核心全案</div>
-                <div class="price-name" style="color:var(--hk-red)">LEVEL 2 / 架构版</div>
-                <h3 class="price-title">数字孪生全案包</h3>
+                <div class="hot-badge" id="l2-badge">HOT / 核心全案</div>
+                <div class="price-name" style="color:var(--hk-red)" id="l2-name">LEVEL 2 / 架构版</div>
+                <h3 class="price-title" id="l2-title">数字孪生全案包</h3>
                 <div class="price-tag">$3,980<span> USD</span></div>
                 <div style="font-size:0.75rem; color:var(--text-dim); margin-top:-10px; margin-bottom:15px;">≈ ¥29,000
                 </div>
                 <ul class="feature-list">
-                    <li class="feature-item"><i data-lucide="zap" size="14"></i> 5大核心医美 Agent 矩阵</li>
-                    <li class="feature-item"><i data-lucide="zap" size="14"></i> 21天配置指南 + 视频课</li>
+                    <li class="feature-item" id="l2-f1"><i data-lucide="zap" size="14"></i> 5大核心医美 Agent 矩阵</li>
+                    <li class="feature-item" id="l2-f2"><i data-lucide="zap" size="14"></i> 21天配置指南 + 视频课</li>
                 </ul>
                 <div class="aside-note">
-                    <span class="tag">溢价逻辑</span>
-                    <p>¥29,800 = 资深助理 2.5 个月工资。但你得到的是永不离职的 AI 矩阵。</p>
+                    <span class="tag" id="l2-aside-tag">溢价逻辑</span>
+                    <p id="l2-aside-text">¥29,800 = 资深助理 2.5 个月工资。但你得到的是永不离职的 AI 矩阵。</p>
                 </div>
-                <button onclick="checkout('L2', event)" class="btn btn-primary">锁定名额</button>
+                <button onclick="checkout('L2', event)" class="btn btn-primary" id="l2-btn">锁定名额</button>
             </div>
 
             <!-- Level 3 -->
             <div class="price-card" id="card-l3" onclick="selectCard('l3')">
-                <div class="price-name">LEVEL 3 / 战略版</div>
-                <h3 class="price-title">首席增长官赋能</h3>
+                <div class="price-name" id="l3-name">LEVEL 3 / 战略版</div>
+                <h3 class="price-title" id="l3-title">首席增长官赋能</h3>
                 <div class="price-tag">$6,800+<span> USD</span></div>
                 <div style="font-size:0.75rem; color:var(--text-dim); margin-top:-10px; margin-bottom:15px;">≈ ¥50,000+
                 </div>
                 <ul class="feature-list">
-                    <li class="feature-item"><i data-lucide="shield" size="14"></i> 全套 19 个 Agent 私有化部署</li>
-                    <li class="feature-item"><i data-lucide="shield" size="14"></i> 企业级 GEO 品牌绝对占位</li>
+                    <li class="feature-item" id="l3-f1"><i data-lucide="shield" size="14"></i> 全套 19 个 Agent 私有化部署</li>
+                    <li class="feature-item" id="l3-f2"><i data-lucide="shield" size="14"></i> 企业级 GEO 品牌绝对占位</li>
                 </ul>
-                <button onclick="checkout('L3', event)" class="btn btn-outline">签署授权</button>
+                <button onclick="checkout('L3', event)" class="btn btn-outline" id="l3-btn">签署授权</button>
             </div>
         </div>
     </section>
@@ -608,17 +610,27 @@
         <div class="footer-content">
             <div>
                 <div class="brand" style="margin-bottom: 2rem;">
-                    <div class="brand-text"><span class="name">GENIUS VISION</span><span class="sub">隽明有限公司</span></div>
+                    <div class="brand-text"><span class="name">GENIUS VISION LIMITED</span><span class="sub"
+                            id="company-name">隽明有限公司</span></div>
                 </div>
+                <p style="font-size: 0.8rem; color: var(--text-dim); line-height: 2.2; max-width: 400px; margin-bottom: 2rem;"
+                    id="company-address">
+                    香港九龙新蒲岗大有街 2 号旺景工业大厦 D 座 3 楼 D01 室<br>
+                    Company Registration No. 3076210
+                </p>
                 <div class="contact-grid">
                     <a href="mailto:xuan.xuan.chen1983@gmail.com" class="contact-item"><i data-lucide="mail"
-                            size="14"></i> Email 咨询</a>
+                            size="14"></i> <span id="email-label">Email 咨询</span></a>
                     <div class="contact-item" onclick="copyText('xuanyi9747', 'WeChat')"><i data-lucide="message-square"
                             size="14"></i> WeChat: xuanyi9747</div>
                     <div class="contact-item" onclick="copyText('gh_c335dce13912', '订阅号')"><i data-lucide="rss"
-                            size="14"></i> 订阅号: gh_c335dce13912</div>
+                            size="14"></i> <span id="subscribe-label">订阅号</span>: gh_c335dce13912</div>
                 </div>
             </div>
+        </div>
+        <div
+            style="text-align: center; margin-top: 5rem; font-size: 0.6rem; color: #222; letter-spacing: 4px; font-weight: 900;">
+            DESIGNED FOR THE DIGITAL SOVEREIGNTY. POWERED BY JIANCANG & NOTION AI.
         </div>
     </footer>
 
@@ -673,6 +685,7 @@
         let currentLang = 'zh';
         const translations = {
             zh: {
+                // Hero
                 heroTag: '数字孪生架构体系',
                 heroTitle: '将商业直觉封装为<br><span>自动化变现产品</span>',
                 heroDesc: '融合 Notion <b>80+</b> 品牌深度拆解模型，配合顶级 <b>GEO 推荐占位</b>。实现审美力 24/7 自动化变现。',
@@ -680,9 +693,44 @@
                 asideText: '这不仅是一份价目表，这是你在 <b>DMY 小程序后台</b> 上架商品的最终执行方案。决策即定局。',
                 btnPricing: '获取协议包',
                 btnInfra: '基建底座',
-                langBtn: 'EN / 中'
+                langBtn: 'EN / 中',
+                // Infrastructure
+                infraTitle: '数字基建：智慧引擎',
+                infraDesc: '拒绝低效率的肉身交付。为您构建闭环的一人公司自动化架构。',
+                manifestoBody: '利用飞书的<b>极速响应</b>与 Notion 的<b>深度沉淀</b>，将实战经验转化为<b>可规模化的数字资产</b>。自动化同步已就绪。',
+                jiancangTitle: '<i data-lucide="box"></i> 简藏 (JianCang)',
+                jiancangDesc: '资产分拣中心。微信文章一键资产化，自动流向飞书与 Notion。',
+                knowledgeTitle: '<i data-lucide="database"></i> 智库积淀',
+                knowledgeDesc: '基于 80+ 品牌数据，确保 Agent 输出具备真实的商业厚度。',
+                // Pricing L1
+                l1Name: 'LEVEL 1 / 工具版',
+                l1Title: '数字基建启动包',
+                l1F1: '<i data-lucide="check" size="14"></i> <b>HTML 生产力三件套</b>',
+                l1F2: '<i data-lucide="check" size="14"></i> 3个入门级 Agent 授权',
+                l1Btn: '立即获取',
+                // Pricing L2
+                l2Badge: 'HOT / 核心全案',
+                l2Name: 'LEVEL 2 / 架构版',
+                l2Title: '数字孪生全案包',
+                l2F1: '<i data-lucide="zap" size="14"></i> 5大核心医美 Agent 矩阵',
+                l2F2: '<i data-lucide="zap" size="14"></i> 21天配置指南 + 视频课',
+                l2AsideTag: '溢价逻辑',
+                l2AsideText: '¥29,800 = 资深助理 2.5 个月工资。但你得到的是永不离职的 AI 矩阵。',
+                l2Btn: '锁定名额',
+                // Pricing L3
+                l3Name: 'LEVEL 3 / 战略版',
+                l3Title: '首席增长官赋能',
+                l3F1: '<i data-lucide="shield" size="14"></i> 全套 19 个 Agent 私有化部署',
+                l3F2: '<i data-lucide="shield" size="14"></i> 企业级 GEO 品牌绝对占位',
+                l3Btn: '签署授权',
+                // Footer
+                companyName: '隽明有限公司',
+                companyAddress: '香港九龙新蒲岗大有街 2 号旺景工业大厦 D 座 3 楼 D01 室<br>Company Registration No. 3076210',
+                emailLabel: 'Email 咨询',
+                subscribeLabel: '订阅号'
             },
             en: {
+                // Hero
                 heroTag: 'Digital Twin Architecture System',
                 heroTitle: 'Convert Business Intuition into<br><span>Automated Assets</span>',
                 heroDesc: 'Powered by <b>80+</b> brand analysis models on Notion, with top-tier <b>GEO positioning</b>. Achieve 24/7 automated monetization.',
@@ -690,13 +738,48 @@
                 asideText: 'This is not just a price list — it\'s the <b>ultimate execution plan</b> for your digital business empire. Decision is final.',
                 btnPricing: 'Get Protocol Pack',
                 btnInfra: 'Infrastructure',
-                langBtn: '中 / EN'
+                langBtn: '中 / EN',
+                // Infrastructure
+                infraTitle: 'Digital Infrastructure: Intelligence Engine',
+                infraDesc: 'No more inefficient manual delivery. We build a closed-loop automation architecture for your one-person company.',
+                manifestoBody: 'Leverage Lark\'s <b>instant response</b> and Notion\'s <b>deep accumulation</b> to transform practical experience into <b>scalable digital assets</b>. Automation sync is ready.',
+                jiancangTitle: '<i data-lucide="box"></i> JianCang (Archive)',
+                jiancangDesc: 'Asset sorting center. One-click article archiving from WeChat, auto-synced to Lark & Notion.',
+                knowledgeTitle: '<i data-lucide="database"></i> Knowledge Base',
+                knowledgeDesc: 'Based on 80+ brand data, ensuring Agent outputs have real commercial depth.',
+                // Pricing L1
+                l1Name: 'LEVEL 1 / Starter',
+                l1Title: 'Digital Infrastructure Kit',
+                l1F1: '<i data-lucide="check" size="14"></i> <b>HTML Productivity Suite (3 tools)</b>',
+                l1F2: '<i data-lucide="check" size="14"></i> 3 Entry-level Agent licenses',
+                l1Btn: 'Get Started',
+                // Pricing L2
+                l2Badge: 'HOT / Full Package',
+                l2Name: 'LEVEL 2 / Architect',
+                l2Title: 'Digital Twin Full Package',
+                l2F1: '<i data-lucide="zap" size="14"></i> 5 Core MedAes Agent Matrix',
+                l2F2: '<i data-lucide="zap" size="14"></i> 21-day Setup Guide + Video Course',
+                l2AsideTag: 'Value Logic',
+                l2AsideText: '$3,980 = 2.5 months of a senior assistant\'s salary. But you get an AI matrix that never quits.',
+                l2Btn: 'Lock In Spot',
+                // Pricing L3
+                l3Name: 'LEVEL 3 / Strategic',
+                l3Title: 'Chief Growth Officer Enablement',
+                l3F1: '<i data-lucide="shield" size="14"></i> Full 19 Agent Matrix Private Deployment',
+                l3F2: '<i data-lucide="shield" size="14"></i> Enterprise GEO Brand Positioning',
+                l3Btn: 'Sign Agreement',
+                // Footer
+                companyName: 'GENIUS VISION LIMITED',
+                companyAddress: 'Unit D01, 3/F, Block D, Wong King Industrial Building,<br>2 Tai Yau Street, San Po Kong, Kowloon, Hong Kong<br>Registration No. 3076210',
+                emailLabel: 'Email Inquiry',
+                subscribeLabel: 'Subscribe'
             }
         };
 
         function toggleLang() {
             currentLang = currentLang === 'zh' ? 'en' : 'zh';
             const t = translations[currentLang];
+            // Hero
             document.getElementById('hero-tag').innerHTML = t.heroTag;
             document.getElementById('hero-title').innerHTML = t.heroTitle;
             document.getElementById('hero-desc').innerHTML = t.heroDesc;
@@ -705,6 +788,42 @@
             document.getElementById('btn-pricing').innerHTML = t.btnPricing;
             document.getElementById('btn-infra').innerHTML = t.btnInfra;
             document.getElementById('langBtn').innerHTML = t.langBtn;
+            // Infrastructure
+            document.getElementById('infra-title').innerHTML = t.infraTitle;
+            document.getElementById('infra-desc').innerHTML = t.infraDesc;
+            document.getElementById('manifesto-body').innerHTML = t.manifestoBody;
+            document.getElementById('jiancang-title').innerHTML = t.jiancangTitle;
+            document.getElementById('jiancang-desc').innerHTML = t.jiancangDesc;
+            document.getElementById('knowledge-title').innerHTML = t.knowledgeTitle;
+            document.getElementById('knowledge-desc').innerHTML = t.knowledgeDesc;
+            // Pricing L1
+            document.getElementById('l1-name').innerHTML = t.l1Name;
+            document.getElementById('l1-title').innerHTML = t.l1Title;
+            document.getElementById('l1-f1').innerHTML = t.l1F1;
+            document.getElementById('l1-f2').innerHTML = t.l1F2;
+            document.getElementById('l1-btn').innerHTML = t.l1Btn;
+            // Pricing L2
+            document.getElementById('l2-badge').innerHTML = t.l2Badge;
+            document.getElementById('l2-name').innerHTML = t.l2Name;
+            document.getElementById('l2-title').innerHTML = t.l2Title;
+            document.getElementById('l2-f1').innerHTML = t.l2F1;
+            document.getElementById('l2-f2').innerHTML = t.l2F2;
+            document.getElementById('l2-aside-tag').innerHTML = t.l2AsideTag;
+            document.getElementById('l2-aside-text').innerHTML = t.l2AsideText;
+            document.getElementById('l2-btn').innerHTML = t.l2Btn;
+            // Pricing L3
+            document.getElementById('l3-name').innerHTML = t.l3Name;
+            document.getElementById('l3-title').innerHTML = t.l3Title;
+            document.getElementById('l3-f1').innerHTML = t.l3F1;
+            document.getElementById('l3-f2').innerHTML = t.l3F2;
+            document.getElementById('l3-btn').innerHTML = t.l3Btn;
+            // Footer
+            document.getElementById('company-name').innerHTML = t.companyName;
+            document.getElementById('company-address').innerHTML = t.companyAddress;
+            document.getElementById('email-label').innerHTML = t.emailLabel;
+            document.getElementById('subscribe-label').innerHTML = t.subscribeLabel;
+            // Refresh icons
+            lucide.createIcons();
         }
     </script>
 </body>
