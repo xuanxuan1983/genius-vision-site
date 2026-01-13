@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>XUANYI | 隽明有限公司 GENIUS VISION - 数字孪生架构师</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+HK:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --hk-red: #E02020;
+            --feishu-blue: #3370FF;
+            --notion-black: #000000;
+            --bg-black: #050505;
+            --text-main: #FFFFFF;
+            --text-dim: #8E8E93;
+            --border: #2C2C2E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans HK', 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 建筑设计风格网格 */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 80px 80px;
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        /* 导航栏 */
+        nav {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 5, 0.85);
+        }
+
+        .logo-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-weight: 900;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+
+        .logo-sub {
+            font-size: 0.6rem;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            margin-top: -2px;
+        }
+
+        .pill-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .pill {
+            font-size: 0.6rem;
+            padding: 2px 8px;
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Hero 区域 */
+        header {
+            padding: 10rem 5% 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        /* 个人照片展示区 - 针对您的照片做了微调 */
+        .hero-image-wrapper {
+            position: relative;
+            flex-shrink: 0;
+            margin-top: 0;
+        }
+
+        .hero-avatar {
+            width: 300px;
+            height: 400px;
+            /* 针对全身/半身照采用纵向比例 */
+            border-radius: 4px;
+            object-fit: cover;
+            filter: grayscale(1) contrast(1.1) brightness(0.9);
+            /* 强化黑白质感 */
+            border: 1px solid var(--border);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            background: #111;
+        }
+
+        .hero-image-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            right: -15px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--hk-red);
+            border-radius: 4px;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .hero-avatar:hover {
+            filter: grayscale(0) brightness(1);
+            transform: scale(1.02);
+            border-color: var(--hk-red);
+        }
+
+        .kicker {
+            color: var(--hk-red);
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .kicker::before {
+            content: "";
+            width: 20px;
+            height: 1px;
+            background: var(--hk-red);
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 6vw, 4.2rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 2rem;
+        }
+
+        /* 飞书 x Notion 联动展示区 */
+        .integration-box {
+            margin: 2rem 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border: 1px dashed var(--border);
+            flex-wrap: wrap;
+        }
+
+        .platform-tag {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* 特色服务网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 5% 8rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: #0D0D0D;
+            padding: 3.5rem 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--hk-red);
+            background: #121212;
+        }
+
+        .feature-card i {
+            margin-bottom: 2rem;
+            color: var(--hk-red);
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .tag {
+            font-size: 0.65rem;
+            background: var(--feishu-blue);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+            font-weight: 800;
+        }
+
+        .feature-card p {
+            color: var(--text-dim);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* 转化按钮 */
+        .stripe-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--hk-red);
+            color: white;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 4px;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .stripe-cta:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+            box-shadow: 0 15px 30px rgba(224, 32, 32, 0.3);
+        }
+
+        /* 页脚 */
+        footer {
+            padding: 8rem 5% 4rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            background: linear-gradient(to bottom, transparent, #080808);
+        }
+
+        .company-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-info {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .contact-item:hover {
+            color: var(--text-main);
+        }
+
+        .copyright {
+            margin-top: 4rem;
+            opacity: 0.3;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 968px) {
+            header {
+                padding-top: 6rem;
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .kicker {
+                justify-content: center;
+            }
+
+            .hero-image-wrapper {
+                margin-bottom: 3rem;
+            }
+
+            .hero-avatar {
+                width: 220px;
+                height: 280px;
+            }
+
+            .integration-box {
+                justify-content: center;
+            }
+
+            .contact-info {
+                gap: 1.5rem;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-overlay"></div>
+
+    <nav>
+        <div class="logo-group">
+            <div class="logo-main">XUANYI ARCHITECT</div>
+            <div class="logo-sub">BY GENIUS VISION LIMITED</div>
+        </div>
+        <div class="pill-group">
+            <span class="pill">BEIJING</span>
+            <span class="pill">HK ENTITY</span>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <p class="kicker">CROSS-BORDER DIGITAL ASSETS</p>
+            <h1>将商业直觉，封装为<br><span style="color: var(--hk-red);">永不停歇的数字杠杆。</span></h1>
+
+            <div class="integration-box">
+                <div class="platform-tag">
+                    <i data-lucide="message-square" color="#3370FF" size="18"></i>
+                    <span>飞书 Lark</span>
+                </div>
+                <i data-lucide="arrow-right-left" size="16" color="#8E8E93"></i>
+                <div class="platform-tag">
+                    <i data-lucide="box" color="#FFFFFF" size="18"></i>
+                    <span>Notion AI</span>
+                </div>
+                <div style="height: 16px; width: 1px; background: var(--border); margin: 0 8px;"></div>
+                <span style="font-size: 0.75rem; color: var(--text-dim); letter-spacing: 1px;">自动化同步已就绪</span>
+            </div>
+
+            <p
+                style="color: var(--text-dim); margin-bottom: 3.5rem; max-width: 600px; font-size: 1.1rem; font-weight: 400;">
+                拒绝低效率的肉身交付。利用飞书的极速响应与 Notion 的深度沉淀，为您构建闭环的一人公司自动化架构。将实战经验转化为可规模化的数字资产。
+            </p>
+
+            <a href="https://buy.stripe.com/14A9AT0om5iz3TU4sN" class="stripe-cta">
+                预约系统诊断 (Stripe 支付) <i data-lucide="chevron-right"></i>
+            </a>
+        </div>
+
+        <!-- 个人照片区域 -->
+        <div class="hero-image-wrapper">
+            <!-- 已经替换为您提供的文件名，请确保图片在同级目录下 -->
+            <img src="hero-avatar.jpg" alt="XUANYI Photo" class="hero-avatar"
+                onerror="this.src='https://via.placeholder.com/300x400/111111/FFFFFF?text=XUANYI+IMAGE'; this.onerror=null;">
+        </div>
+    </header>
+
+    <main class="feature-grid">
+        <div class="feature-card">
+            <i data-lucide="zap" size="32"></i>
+            <h3>简藏 DMY 2.0 <span class="tag">HOT</span></h3>
+            <p>不仅仅是 Notion。现在已打通飞书多维表格，实现微信端一键采集，双平台同步响应。利用 Webhook 实现“秒级”入库，真正做到“随手记，到处用”。</p>
+        </div>
+        <div class="feature-card">
+            <i data-lucide="globe" size="32"></i>
+            <h3>GEO 行业标准库</h3>
+            <p>立足香港国际视野，针对 Perplexity 及 SearchGPT 优化医美/大健康行业关键词。通过语义网建模，确保您的数字资产在 AI 搜索时代获得首选推荐。</p>
+        </div>
+        <div class="feature-card">
+            <i data-lucide="refresh-cw" size="32"></i>
+            <h3>Make.com 自动化流</h3>
+            <p>连接 1000+ 应用。为您定制从线索自动抓取、飞书即时提醒到 Notion 客户管理的无人值守系统。实现“睡觉时业务仍在运转”的架构愿景。</p>
+        </div>
+    </main>
+
+    <footer>
+        <span class="company-name">GENIUS VISION LIMITED 隽明有限公司</span>
+        <p style="letter-spacing: 2px; font-weight: 400; font-size: 0.8rem; color: var(--text-dim);">BEIJING · HONG KONG
+        </p>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <i data-lucide="message-circle" size="16"></i>
+                <span>WeChat: xuanyi9747</span>
+            </div>
+            <a href="mailto:xuan.xuan.chen1983@gmail.com" class="contact-item">
+                <i data-lucide="mail" size="16"></i>
+                <span>xuan.xuan.chen1983@gmail.com</span>
+            </a>
+            <div class="contact-item">
+                <i data-lucide="award" size="16"></i>
+                <span>Digital Twin Architect</span>
+            </div>
+        </div>
+
+        <p class="copyright">
+            © 2026 GENIUS VISION LIMITED. ALL RIGHTS RESERVED.
+        </p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.8s cubic-bezier(0.2, 1, 0.3, 1) ${index * 0.15}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+
+</html>
