@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>资源中心 | GENIUS VISION - 智库与洞察</title>
+    <meta name="description" content="GENIUS VISION 资源中心：下载 2026 医美增长工具包，阅读行业终局思考与实战复盘。">
+    <meta property="og:title" content="资源中心 | GENIUS VISION">
+    <meta property="og:description" content="医美增长的黑盒，用数据打开。从顶层设计到落地实操的完整知识库。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xuanxuan1983.github.io/genius-vision-site/resources.html">
+    <meta property="og:image" content="https://xuanxuan1983.github.io/genius-vision-site/favicon.webp">
+    <link rel="icon" href="/favicon.webp" type="image/webp">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+HK:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --hk-red: #E02020;
+            --bg-black: #050505;
+            --surface: #0E0E0E;
+            --text-main: #FFFFFF;
+            --text-dim: rgba(255, 255, 255, 0.45);
+            --border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans HK', sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 导航栏 (与 Index 保持一致) */
+        nav {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(25px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.8);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .brand-text .name {
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+            display: block;
+        }
+
+        .brand-text .sub {
+            font-size: 0.6rem;
+            color: var(--hk-red);
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Hero */
+        .page-header {
+            padding: 8rem 5% 4rem;
+            border-bottom: 1px solid var(--border);
+            background: radial-gradient(circle at 50% 0%, rgba(224, 32, 32, 0.05), transparent 70%);
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .page-desc {
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 3rem;
+        }
+
+        /* Lead Magnet (工具包下载) */
+        .lead-magnet {
+            margin-top: 4rem;
+            background: linear-gradient(145deg, #111, #080808);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--hk-red);
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .magnet-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .magnet-content p {
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .btn-download {
+            background: var(--text-main);
+            color: var(--bg-black);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .btn-download:hover {
+            background: var(--hk-red);
+            color: white;
+            box-shadow: 0 10px 30px rgba(224, 32, 32, 0.2);
+        }
+
+        /* Articles Grid */
+        .grid-section {
+            padding: 6rem 5%;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            color: var(--hk-red);
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .article-card {
+            border: 1px solid var(--border);
+            background: var(--surface);
+            padding: 2.5rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card:hover {
+            border-color: var(--hk-red);
+            transform: translateY(-5px);
+        }
+
+        .article-tag {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            width: fit-content;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            min-height: 3.6em;
+            /* 统一高度 */
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            font-size: 0.75rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--hk-red);
+            text-decoration: none;
+            padding-bottom: 2px;
+            width: fit-content;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        footer {
+            padding: 4rem 5%;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .lead-magnet {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="brand">
+            <div class="brand-text"><span class="name">XUANYI ARCHITECT</span><span class="sub">Genius Vision</span>
+            </div>
+        </a>
+        <div>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="resources.html" class="nav-link" style="color:white;">Resources</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">Growth Intelligence <span style="color:var(--hk-red);">.</span></h1>
+        <p class="page-desc">
+            不仅仅是理论。这里有如果你想在 2026 年存活所必须知道的顶层战略、数据模型与实战复盘。
+        </p>
+
+        <!-- Lead Magnet -->
+        <div class="lead-magnet">
+            <div class="magnet-content">
+                <span
+                    style="font-size:0.7rem; color:var(--hk-red); font-weight:900; display:block; margin-bottom:10px;">CORE
+                    TOOLKIT</span>
+                <h3>医美增长系统工具包 (2025 Edition)</h3>
+                <p>包含：89项机构健康度自评表 + 6大系统诊断框架 + ROI 追踪 Excel 模板。这不仅是一份资料，这是你机构的数据体检报告。</p>
+                <a href="https://v.wjx.cn/vm/O3vNpso.aspx#" target="_blank" class="btn-download">
+                    <i data-lucide="download"></i> 免费获取诊断
+                </a>
+            </div>
+            <div style="opacity: 0.3; text-align:right; font-family:'Courier New', monospace; font-size:0.7rem;">
+                > SYSTEMS CHECK...<br>
+                > LOADING ASSETS...<br>
+                > ACCESS GRANTED<br>
+                > V.2025.1
+            </div>
+        </div>
+    </header>
+
+    <section class="grid-section">
+        <span class="section-label">Strategic Insights</span>
+
+        <div class="article-grid">
+
+            <!-- Article 1: 终局思考 -->
+            <article class="article-card" onclick="location.href='article-endgame.html'">
+                <span class="article-tag">Strategy / Level 3</span>
+                <h2 class="article-title">医美终局推演：设计下一个十年的生存法则</h2>
+                <p class="article-excerpt">
+                    行业最大的风险，不是不知道未来会发生什么，而是用旧时代的逻辑去设计新时代的增长。在"AI、资本和专业主义"的三重压力下，你必须从"流量收割者"进化为"未来设计者"。
+                </p>
+                <a href="article-endgame.html" class="read-more">Read Insight</a>
+            </article>
+
+            <!-- Article 2: ROI 看板 -->
+            <article class="article-card" onclick="location.href='article-roi.html'">
+                <span class="article-tag">Execution / Level 2</span>
+                <h2 class="article-title">拒绝盲目投放：手把手教你搭建 ROI 追踪看板</h2>
+                <p class="article-excerpt">
+                    如果你答不上来哪个渠道的获客成本最低，说明你在"盲开"。一张 Excel 表，6 个核心指标，帮你从"靠感觉决策"转向"科学投放"，让每一分营销预算都可追踪。
+                </p>
+                <a href="article-roi.html" class="read-more">Read Insight</a>
+            </article>
+
+            <!-- Article 3: 美金变现 -->
+            <article class="article-card" onclick="location.href='article-money.html'">
+                <span class="article-tag">Innovation / Level 1</span>
+                <h2 class="article-title">实战复盘：我如何用 AI 搭建 24/7 美金自动售货机</h2>
+                <p class="article-excerpt">
+                    这才是数字游民的终极自由——拥有"全球定价权"。通过注册香港公司 + Stripe 收款 + 自动化交付，我构建了一套不需要人力的被动收入来源。
+                </p>
+                <a href="article-money.html" class="read-more">Read Insight</a>
+            </article>
+
+        </div>
+    </section>
+
+    <footer>
+        <div style="margin-bottom:20px; font-weight:900; color:white;">GENIUS VISION LIMITED</div>
+        <p>COPYRIGHT © 2026 XUANYI ARCHITECT. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

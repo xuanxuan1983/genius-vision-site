@@ -12,21 +12,25 @@
     <meta property="og:description" content="融合 80+ 品牌深度拆解模型，配合顶级 GEO 推荐占位，实现 24/7 自动化变现。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://xuanxuan1983.github.io/genius-vision-site/">
-    <meta property="og:image" content="https://xuanxuan1983.github.io/genius-vision-site/favicon.png">
-    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta property="og:image" content="https://xuanxuan1983.github.io/genius-vision-site/favicon.webp">
+    <link rel="icon" href="/favicon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+HK:wght@100..900&display=swap">
     <link rel="canonical" href="https://xuanxuan1983.github.io/genius-vision-site/">
     <!-- 引入顶级字体栈 -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+HK:wght@100..900&display=swap"
         rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "GENIUS VISION LIMITED",
   "url": "https://xuanxuan1983.github.io/genius-vision-site/",
-  "logo": "https://xuanxuan1983.github.io/genius-vision-site/favicon.png",
+  "logo": "https://xuanxuan1983.github.io/genius-vision-site/favicon.webp",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "香港九龙新蒲岗大有街 2 号旺景工业大厦 D 座 3 楼 D01 室",
@@ -42,43 +46,52 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "LEVEL 1 / 工具版 – 数字基建启动包",
-  "description": "HTML 生产力三件套 + 3 个入门级 Agent 授权",
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "USD",
-    "price": "299",
-    "url": "https://buy.stripe.com/14A5kDc749yP9ee9N79MY01"
-  }
+    "@type": "Product",
+    "name": "LEVEL 1 / 工具版 – 数字基建启动包",
+    "description": "HTML 生产力三件套 + 3 个入门级 Agent 授权",
+    "sku": "GV-LEVEL-1",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "299",
+      "url": "https://buy.stripe.com/14A5kDc749yP9ee9N79MY01",
+      "availability": "InStock",
+      "priceValidUntil": "2025-12-31"
+    }
 }
 </script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "LEVEL 2 / 架构版 – 数字孪生全案包",
-  "description": "5 大核心医美 Agent 矩阵 + 21 天配置指南 + 视频课",
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "USD",
-    "price": "3980",
-    "url": "https://buy.stripe.com/3cI28rb304evbmm3oJ9MY02"
-  }
+    "@type": "Product",
+    "name": "LEVEL 2 / 架构版 – 数字孪生全案包",
+    "description": "5 大核心医美 Agent 矩阵 + 21 天配置指南 + 视频课",
+    "sku": "GV-LEVEL-2",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "3980",
+      "url": "https://buy.stripe.com/3cI28rb304evbmm3oJ9MY02",
+      "availability": "InStock",
+      "priceValidUntil": "2025-12-31"
+    }
 }
 </script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "LEVEL 3 / 战略版 – 首席增长官赋能",
-  "description": "全套 19 个 Agent 私有化部署 + 企业级 GEO 品牌占位",
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "USD",
-    "price": "6800",
-    "url": "https://buy.stripe.com/28E14n2wu8uL6229N79MY04"
-  }
+    "@type": "Product",
+    "name": "LEVEL 3 / 战略版 – 首席增长官赋能",
+    "description": "全套 19 个 Agent 私有化部署 + 企业级 GEO 品牌占位",
+    "sku": "GV-LEVEL-3",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "6800",
+      "url": "https://buy.stripe.com/28E14n2wu8uL6229N79MY04",
+      "availability": "InStock",
+      "priceValidUntil": "2025-12-31"
+    }
 }
 </script>
 
@@ -559,6 +572,8 @@
             color: var(--hk-red);
         }
 
+
+
         .dock-cta {
             width: 56px;
             height: 56px;
@@ -569,6 +584,17 @@
             align-items: center;
             justify-content: center;
             transform: translateY(-20px);
+        }
+
+        .countdown-timer {
+            font-size: 0.8rem;
+            color: var(--hk-red);
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
     </style>
 </head>
@@ -585,6 +611,7 @@
         <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()">&#9776;</button>
         <div class="nav-links">
             <a onclick="toggleLang()" class="nav-link" id="langBtn" style="cursor:pointer;">EN / 中</a>
+            <a href="resources.html" class="nav-link">Resources</a>
             <a onclick="scrollToSection('infra')" class="nav-link">Intelligence</a>
             <a onclick="scrollToSection('pricing')" class="nav-link">Pricing</a>
             <a href="mailto:xuan.xuan.chen1983@gmail.com" class="btn-primary"
@@ -614,7 +641,7 @@
         </div>
         <div class="profile-container">
             <div class="scan-line"></div>
-            <img src="profile.jpg" alt="XUANYI" class="profile-img"
+            <img src="profile.webp" alt="XUANYI" class="profile-img" loading="lazy"
                 onerror="this.src='https://ui-avatars.com/api/?name=XUANYI&background=0a0a0a&color=E02020&size=512'">
         </div>
     </header>
@@ -655,6 +682,9 @@
                 <div class="price-tag">$299<span> USD</span></div>
                 <div style="font-size:0.75rem; color:var(--text-dim); margin-top:-10px; margin-bottom:15px;">≈ ¥2,180
                 </div>
+                <div class="countdown-timer" data-deadline="2025-12-31T23:59:59">
+                    限时优惠: <span class="time">00:00:00:00</span>
+                </div>
                 <ul class="feature-list">
                     <li class="feature-item" id="l1-f1"><i data-lucide="check" size="14"></i> <b>HTML 生产力三件套</b></li>
                     <li class="feature-item" id="l1-f2"><i data-lucide="check" size="14"></i> 3个入门级 Agent 授权</li>
@@ -669,6 +699,9 @@
                 <h3 class="price-title" id="l2-title">数字孪生全案包</h3>
                 <div class="price-tag">$3,980<span> USD</span></div>
                 <div style="font-size:0.75rem; color:var(--text-dim); margin-top:-10px; margin-bottom:15px;">≈ ¥29,000
+                </div>
+                <div class="countdown-timer" data-deadline="2025-12-31T23:59:59">
+                    限时优惠: <span class="time">00:00:00:00</span>
                 </div>
                 <ul class="feature-list">
                     <li class="feature-item" id="l2-f1"><i data-lucide="zap" size="14"></i> 5大核心医美 Agent 矩阵</li>
@@ -687,6 +720,9 @@
                 <h3 class="price-title" id="l3-title">首席增长官赋能</h3>
                 <div class="price-tag">$6,800+<span> USD</span></div>
                 <div style="font-size:0.75rem; color:var(--text-dim); margin-top:-10px; margin-bottom:15px;">≈ ¥50,000+
+                </div>
+                <div class="countdown-timer" data-deadline="2025-12-31T23:59:59">
+                    限时优惠: <span class="time">00:00:00:00</span>
                 </div>
                 <ul class="feature-list">
                     <li class="feature-item" id="l3-f1"><i data-lucide="shield" size="14"></i> 全套 19 个 Agent 私有化部署</li>
@@ -726,7 +762,44 @@
     </footer>
 
     <script>
-        window.addEventListener('DOMContentLoaded', () => lucide.createIcons());
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            startCountdown();
+        });
+
+        // Countdown Timer Logic
+        function startCountdown() {
+            const timers = document.querySelectorAll('.countdown-timer');
+            timers.forEach(timer => {
+                const deadline = new Date(timer.dataset.deadline).getTime();
+
+                const update = () => {
+                    const now = new Date().getTime();
+                    const t = deadline - now;
+
+                    if (t < 0) {
+                        timer.innerHTML = "EXPIRED";
+                        return;
+                    }
+
+                    const days = Math.floor(t / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+                    // Pad with leading zeros
+                    const d = days < 10 ? "0" + days : days;
+                    const h = hours < 10 ? "0" + hours : hours;
+                    const m = minutes < 10 ? "0" + minutes : minutes;
+                    const s = seconds < 10 ? "0" + seconds : seconds;
+
+                    timer.querySelector('.time').innerText = `${d}:${h}:${m}:${s}`;
+                };
+
+                update(); // Initial call
+                setInterval(update, 1000);
+            });
+        }
 
         // 核心交互：点击哪张卡片，哪张卡片出现"框"
         function selectCard(levelId) {
