@@ -596,6 +596,54 @@
             align-items: center;
             gap: 8px;
         }
+
+        /* Video Container Styles */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #111;
+            margin: 3rem 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #222, #080808);
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            background: radial-gradient(circle at center, #2a2a2a, #080808);
+        }
+
+        .play-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--hk-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 20px rgba(224, 32, 32, 0.4);
+        }
     </style>
 </head>
 
@@ -655,6 +703,19 @@
         <div class="infra-manifesto">
             <div class="manifesto-body" id="manifesto-body">
                 利用飞书的<b>极速响应</b>与 Notion 的<b>深度沉淀</b>，将实战经验转化为<b>可规模化的数字资产</b>。自动化同步已就绪。
+            </div>
+        </div>
+
+        <!-- Video Placeholder -->
+        <div class="video-container" style="max-width: 800px; margin: 3rem auto;">
+            <div class="video-placeholder">
+                <div class="play-icon">
+                    <i data-lucide="play" color="white" fill="white"></i>
+                </div>
+                <span
+                    style="font-size:0.9rem; font-weight:700; color:white; letter-spacing:1px; text-transform:uppercase;">Watch:
+                    The Digital Twin Architecture (Brand Story)</span>
+                <span style="font-size:0.75rem; color:#666; margin-top:5px;">Coming Soon</span>
             </div>
         </div>
 
