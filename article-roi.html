@@ -92,6 +92,56 @@
             display: inline-block;
             margin-top: 15px;
         }
+
+
+
+        /* Video Container Styles */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #111;
+            margin: 2rem 0 3rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #222, #080808);
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            background: radial-gradient(circle at center, #2a2a2a, #080808);
+        }
+
+        .play-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--hk-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 20px rgba(224, 32, 32, 0.4);
+        }
     </style>
 </head>
 
@@ -113,6 +163,22 @@
     </ul>
 
     <p>如果你答不上来，说明你在"盲开"——每一笔营销费用都是赌博。</p>
+
+    <!-- Video Placeholder -->
+    <div class="video-container">
+        <div class="video-placeholder">
+            <div class="play-icon">
+                <i data-lucide="play" color="white" fill="white"></i>
+            </div>
+            <span
+                style="font-size:0.9rem; font-weight:700; color:white; letter-spacing:1px; text-transform:uppercase;">Watch:
+                ROI Dashboard Walkthrough (8 min)</span>
+            <span style="font-size:0.75rem; color:#666; margin-top:5px;">Coming Soon</span>
+        </div>
+        <!-- Future iframe goes here: 
+        <iframe src="..." width="100%" height="100%" frameborder="0" allowfullscreen></iframe> 
+        -->
+    </div>
 
     <h2>第1步:确定追踪指标</h2>
     <p>不是指标越多越好,你需要抓住6个核心指标:</p>
