@@ -7,6 +7,14 @@
     <meta name="color-scheme" content="light dark">
     <title>XUANYI | GENIUS VISION - 数字孪生架构体系</title>
 
+    <meta name="description" content="XUANYI | GENIUS VISION - 数字孪生架构体系，提供自动化变现产品与数字基建服务。">
+    <meta property="og:title" content="XUANYI | GENIUS VISION - 数字孪生架构体系">
+    <meta property="og:description" content="融合 80+ 品牌深度拆解模型，配合顶级 GEO 推荐占位，实现 24/7 自动化变现。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xuanxuan1983.github.io/genius-vision-site/">
+    <meta property="og:image" content="https://xuanxuan1983.github.io/genius-vision-site/favicon.png">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="canonical" href="https://xuanxuan1983.github.io/genius-vision-site/">
     <!-- 引入顶级字体栈 -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+HK:wght@100..900&display=swap"
@@ -116,11 +124,32 @@
             letter-spacing: 2px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 35px;
-            align-items: center;
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 1rem;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+        }
+
 
         .nav-link {
             color: var(--text-dim);
@@ -492,6 +521,7 @@
             <div class="brand-text"><span class="name">XUANYI ARCHITECT</span><span class="sub">Genius Vision
                     Limited</span></div>
         </a>
+        <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()">&#9776;</button>
         <div class="nav-links">
             <a onclick="toggleLang()" class="nav-link" id="langBtn" style="cursor:pointer;">EN / 中</a>
             <a onclick="scrollToSection('infra')" class="nav-link">Intelligence</a>
@@ -665,6 +695,11 @@
             document.execCommand('copy');
             document.body.removeChild(el);
             alert(`${platform} ID 已复制`);
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks) navLinks.classList.toggle('open');
         }
 
         function checkout(level, event) {
