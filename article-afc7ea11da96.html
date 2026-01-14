@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怎么搭建你的第一个自动化工作流，让AI自己给自己派活 | GENIUS VISION Insights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+HK:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root { --hk-red: #E02020; --bg-black: #050505; --text-main: #FFFFFF; --text-dim: rgba(255, 255, 255, 0.6); --border: rgba(255, 255, 255, 0.1); }
+        body { background: var(--bg-black); color: var(--text-main); font-family: 'Inter', 'Noto Sans HK', sans-serif; line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 2rem; line-height: 1.2; }
+        h2 { font-size: 1.8rem; margin: 3rem 0 1.5rem; color: #fff; }
+        h3 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--hk-red); }
+        p, li { margin-bottom: 1.5rem; color: var(--text-dim); font-size: 1.1rem; }
+        strong { color: #fff; }
+        ul, ol { margin-left: 20px; margin-bottom: 2rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--hk-red); text-decoration: none; font-weight: 700; margin-bottom: 3rem; text-transform: uppercase; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <a href="resources.html" class="back-link"><i data-lucide="arrow-left"></i> Back to Resources</a>
+    
+    <span style="color:var(--hk-red); font-weight:900; font-size:0.8rem; text-transform:uppercase; letter-spacing:2px; display:block; margin-bottom:10px;">
+        文章
+    </span>
+    
+    <h1>怎么搭建你的第一个自动化工作流，让AI自己给自己派活</h1>
+    <p style="font-size:0.9rem; color:#888;">
+        发布时间：2026-01-14 | 阅读时间：约 5 分钟
+    </p>
+    <hr style="border:0; border-top:1px solid var(--border); margin:2rem 0;">
+
+    <div class="article-content">
+        <p>我是萱宜。</p>
+<p>上一篇咱们聊了《3步把你的经验翻译成AI听得懂的指令》。</p>
+<p>后台有位朋友问得好：</p>
+<blockquote style="border-left: 3px solid var(--hk-red); padding-left: 1rem; color: #ccc; margin: 1.5rem 0;">“萱宜，指令我会写了，但每次都要打开ChatGPT，把指令粘贴进去，再把生成的东西粘贴回来，好麻烦啊！有没有更省事的招？”</blockquote>
+<p>问到点子上了。</p>
+<p>如果你还在不停地 Ctrl+C / Ctrl+V，那你只是给AI打工的“搬运工”，不是它的“老板”。</p>
+<p>真正的“一人公司”玩家，都在用自动化（Automation）。</p>
+<p>简单说，就是让AI自己给自己派活，你只负责收货。</p>
+<p>今天，我就手把手教你搭建第一个自动化工作流。</p>
+<p>别听到“搭建”就头大，不需要你会写代码，只需要你会拼乐高。</p>
+<h4>为什么你需要自动化？</h4>
+<blockquote style="border-left: 3px solid var(--hk-red); padding-left: 1rem; color: #ccc; margin: 1.5rem 0;">System > Brute Force (系统胜过蛮干)</blockquote>
+<p>在此之前，我要先纠正一个观念：不是所有的自动化都需要“搭积木”。</p>
+<p>刚才有位内行朋友提醒得特别好：“现在Notion里面的Agent就可以调动很多大模型了，根本不需要跨平台折腾。”</p>
+<p>没错！这就是我想说的两层境界：</p>
+<h4>第一层：内循环（Notion AI 原生智能）</h4>
+<p>如果你只是想让AI帮你写文章、做总结、提炼数据，那Notion AI本身就是最强的自动化。</p>
+<ul><li>怎么玩？ 直接在数据库里添加一个“AI Autofill”字段，或者使用“Ask AI”。</li></ul>
+<ul><li>优势：零门槛，不需要注册Make，不需要配置API，直接调用GPT-4或Claude等模型。</li></ul>
+<ul><li>场景：我输入标题 -> AI自动生成大纲 -> AI自动润色。</li></ul>
+<ul><li>结论：解决“复制粘贴”的痛点，用Notion AI是路径最短的MVP。</li></ul>
+<h4>第二层：外链接（Make.com 跨应用协同）</h4>
+<p>那为什么还要学 Make.com？</p>
+<p>因为你的业务不仅仅在Notion里。你需要发邮件、发小红书、同步日历、推送到企业微信。</p>
+<p>Notion AI 只能在“家里”干活，Make.com 能帮你把活“送出门”。</p>
+<p>所以，今天的教程，我们来玩点更有野心的：</p>
+<p>不是简单的“写文章”，而是搭建一个“跨平台指挥部”。</p>
+<p>为了让你看懂自动化的底层逻辑（If This, Then That），我们还是用最经典的“灵感 -> 内容”流程来练手，但你要知道，这套逻辑学会了，你可以用它去控制全世界。</p>
+<h4>核心心法：If This, Then That (如果……就……)</h4>
+<p>所有自动化工具（比如 Make.com, Zapier），底层逻辑就一句话：</p>
+<p>“当 [这件事] 发生时，就自动做 [那件事]。”</p>
+<ul><li>Trigger (触发器)：发令枪。比如“我在Notion里新建了一个页面”。</li></ul>
+<ul><li>Action (动作)：干活。比如“让ChatGPT写一篇文章”。</li></ul>
+<h4>实战演练：搭建“灵感自动裂变机”</h4>
+<p>咱们来做一个最实用的工作流：把一句“灵感”，自动变成一篇“文章初稿”。</p>
+<p>工具准备：</p>
+<ul><li>Make.com (自动化中枢，类似大脑)</li></ul>
+<ul><li>Notion (你的工作台)</li></ul>
+<ul><li>OpenAI (ChatGPT)/Gemini (你的员工)</li></ul>
+<h4>第一步：设置“发令枪” (Trigger)</h4>
+<ol><li>在 Make.com 创建一个新 Scenario (场景)。</li></ol>
+<ol><li>添加 Notion 节点，选择 “Watch Database Items” (监听数据库)。</li></ol>
+<ol><li>告诉它监听哪个数据库（比如你的“灵感库”）。</li></ol>
+<ol><li>设定条件：当“状态”变为“开始写作”时，触发流程。</li></ol>
+<h4>第二步：设置“加工厂” (Action)</h4>
+<ol><li>添加 OpenAI (ChatGPT) 节点，选择 “Create a completion”。</li></ol>
+<ol><li>在 Prompt 里填入咱们上一篇学的“结构化指令”：</li></ol>
+<h4>第三步：设置“收货点” (Update)</h4>
+<ol><li>添加 Notion 节点，选择 “Update a Database Item”。</li></ol>
+<ol><li>把 ChatGPT 生成的内容，填回这个页面的“正文”里。</li></ol>
+<p>搞定！</p>
+<p>以后，你只需要在Notion里写个标题，把状态改成“开始写作”，然后该干嘛干嘛去。</p>
+<p>过几分钟，一篇热乎乎的初稿就自动送上门了。</p>
+<h4>🎥 还没看懂？看视频实操</h4>
+<p>[请在此处插入您的演示视频：Make.com搭建演示]</p>
+<p>在这个5分钟的视频里，我演示了如何把刚才这三步串起来。你会发现，真的就像连线游戏一样简单。</p>
+<h4>萱宜想说</h4>
+<p>不要为了自动化而自动化。</p>
+<p>自动化的目的，是为了把你从重复、低价值的劳动中解放出来，让你有时间去思考战略、去链接客户、去享受生活。</p>
+<p>刚开始，先做这一个就够了。</p>
+<p>跑通了这一个，你就捅破了那层窗户纸。你会发现，原来你可以拥有千军万马。</p>
+<blockquote style="border-left: 3px solid var(--hk-red); padding-left: 1rem; color: #ccc; margin: 1.5rem 0;">Leverage > Effort (杠杆胜过努力)</blockquote>
+<h4>🧩 还没完？如果你嫌麻烦……</h4>
+<p>看到这里，肯定有人心里犯嘀咕：</p>
+<p>“萱宜，道理我都懂，但我还是懒得弄API，懒得画流程图，我就想要个现成的。”</p>
+<p>没问题。这也正是我在【数字孪生全案 (Level 2)】里为你做的事。</p>
+<p>在这套服务里，我不仅会帮你设计Agent，还会把这些“自动化管道”全部铺设好。</p>
+<p>你不需要懂代码，不需要管 Make.com 的节点，你只需要做一个“下指令”的老板。</p>
+<p>如果你想直接拥有这套“睡后生产力系统”，而不是从零开始拼乐高，欢迎来找我聊聊。</p>
+<p>下周预告：</p>
+<p>有了指令，有了自动化，我们的内容工厂已经转起来了。</p>
+<p>但怎么知道哪篇内容火了？怎么用数据反哺创作？</p>
+<p>下一篇，咱们聊聊“AI+数据：如何打造你的增长仪表盘”。</p>
+<h4>本周行动单</h4>
+<ol><li>注册 Make.com：先申请个免费账号，熟悉下界面。</li></ol>
+<ol><li>画图：拿张纸，画出你最想自动化的一个流程（比如：收到邮件 -> 自动存入Notion）。</li></ol>
+<ol><li>尝试：按照上面的步骤，试着连通一下 Notion 和 Make。</li></ol>
+<p>验收标准：成功跑通一次流程，看着Notion里的内容自动出现。</p>
+<p>风险提示：OpenAI 的 API 需要绑定信用卡，注意设置限额（Usage Limit），别花超了。</p>
+<h4>关于作者</h4>
+<p>萱宜</p>
+<p>医美增长架构师 | AI+系统智慧家</p>
+<p>【行业老兵】</p>
+<p>15年医美全产业链实战。曾任职于艾尔建、国药中生等世界500强及央企，从0-1深度参与过双美、衡力等品牌的区域市场与销售体系，完整搭建过弗缦全体系营销前后端组织。一直是上游厂家视角，深知如何通过培训赋能下游机构。</p>
+<p>【AI科班】</p>
+<p>拒绝“二道贩子”，做持证上岗的实战派。</p>
+<ul><li>国际权威认证：获IBM《生成式AI》、范德比尔特大学《提示词工程》、DeepLearning.AI等多项专项认证。</li></ul>
+<ul><li>技术硬底座：拥有密歇根大学Python编程与数据结构认证，精通Make.com自动化工作流设计。</li></ul>
+<p>【专注做啥】</p>
+<p>只做一件事：帮医美创始人与一人公司，用“第一性原理+自动化系统”，把脑袋里的经验变成可复制、可执行、24小时不睡觉的数字资产。</p>
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
