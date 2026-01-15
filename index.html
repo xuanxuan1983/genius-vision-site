@@ -13,6 +13,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://xuanxuan1983.github.io/genius-vision-site/">
     <meta property="og:image" content="https://xuanxuan1983.github.io/genius-vision-site/favicon.webp">
+    <meta property="og:video" content="https://xuanxuan1983.github.io/genius-vision-site/assets/video/video.mp4" />
+    <meta property="og:video:type" content="video/mp4" />
+    <meta property="og:video:width" content="1280" />
+    <meta property="og:video:height" content="720" />
     <link rel="icon" href="/favicon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -652,17 +656,18 @@
     <div class="grid-bg"></div>
 
     <nav class="desktop-nav">
-        <a href="#" class="brand">
-            <div class="brand-text"><span class="name">XUANYI ARCHITECT</span><span class="sub">Genius Vision
-                    Limited</span></div>
+        <a href="index.html" class="brand">
+            <div class="brand-text"><span class="name">XUANYI ARCHITECT</span><span class="sub">Genius Vision</span>
+            </div>
         </a>
         <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()">&#9776;</button>
         <div class="nav-links">
             <a onclick="toggleLang()" class="nav-link" id="langBtn" style="cursor:pointer;">EN / 中</a>
-            <a href="resources.html" class="nav-link">Resources</a>
-            <a onclick="scrollToSection('infra')" class="nav-link">Intelligence</a>
-            <a onclick="scrollToSection('pricing')" class="nav-link">Pricing</a>
-            <a href="mailto:xuan.xuan.chen1983@gmail.com" class="btn-primary"
+            <a href="index.html" class="nav-link" id="homeLink">Home</a>
+            <a href="resources.html" class="nav-link" id="resourcesLink">Resources</a>
+            <a onclick="scrollToSection('infra')" class="nav-link" id="intelligenceLink">Intelligence</a>
+            <a onclick="scrollToSection('pricing')" class="nav-link" id="pricingLink">Pricing</a>
+            <a href="mailto:xuan.xuan.chen1983@gmail.com" class="btn-primary" id="deployBtn"
                 style="padding: 10px 22px; font-size: 0.65rem; width: auto;">Deploy Now</a>
         </div>
     </nav>
@@ -707,7 +712,7 @@
         </div>
 
         <!-- Video Placeholder -->
-        <div class="video-container" style="max-width: 800px; margin: 3rem auto;">
+        <div id="brandVideoContainer" class="video-container" style="max-width: 800px; margin: 3rem auto;">
             <div class="video-placeholder">
                 <div class="play-icon">
                     <i data-lucide="play" color="white" fill="white"></i>
@@ -1018,6 +1023,15 @@
             document.getElementById('btn-pricing').innerHTML = t.btnPricing;
             document.getElementById('btn-infra').innerHTML = t.btnInfra;
             document.getElementById('langBtn').innerHTML = t.langBtn;
+            // Nav links
+            document.getElementById('homeLink').innerHTML = t.home;
+            document.getElementById('resourcesLink').innerHTML = t.resources;
+            document.getElementById('intelligenceLink').innerHTML = t.intelligence;
+            document.getElementById('pricingLink').innerHTML = t.pricing;
+            document.getElementById('deployBtn').innerHTML = t.deploy;
+            // Nav links in resources page (if present)
+            if (document.getElementById('homeLinkRes')) document.getElementById('homeLinkRes').innerHTML = t.home;
+            if (document.getElementById('resourcesLinkRes')) document.getElementById('resourcesLinkRes').innerHTML = t.resources;
             // Infrastructure
             document.getElementById('infra-title').innerHTML = t.infraTitle;
             document.getElementById('infra-desc').innerHTML = t.infraDesc;
@@ -1055,6 +1069,34 @@
             // Refresh icons
             lucide.createIcons();
         }
+    </script>
+    <script>
+        // Video placeholder click handler
+        document.addEventListener('DOMContentLoaded', function () {
+            const placeholder = document.querySelector('#brandVideoContainer .video-placeholder');
+            if (!placeholder) return;
+            placeholder.addEventListener('click', function () {
+                // Create video element
+                const video = document.createElement('video');
+                video.setAttribute('controls', '');
+                video.setAttribute('autoplay', '');
+                video.setAttribute('class', 'brand-video');
+                video.style.width = '100%';
+                video.style.height = '100%';
+                // Source – replace with actual video URL when ready
+                const source = document.createElement('source');
+                source.src = 'assets/video/video.mp4';
+                source.type = 'video/mp4';
+                video.appendChild(source);
+                // Optional WebM fallback
+                const sourceWebm = document.createElement('source');
+                sourceWebm.src = 'assets/video/video.webm';
+                sourceWebm.type = 'video/webm';
+                video.appendChild(sourceWebm);
+                // Replace placeholder with video element
+                placeholder.parentNode.replaceChild(video, placeholder);
+            });
+        });
     </script>
 </body>
 
