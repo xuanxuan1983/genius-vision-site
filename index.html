@@ -712,16 +712,19 @@
         </div>
 
         <!-- Video Placeholder -->
-        <div id="brandVideoContainer" class="video-container" style="max-width: 800px; margin: 3rem auto;">
-            <div class="video-placeholder">
-                <div class="play-icon">
-                    <i data-lucide="play" color="white" fill="white"></i>
-                </div>
-                <span
-                    style="font-size:0.9rem; font-weight:700; color:white; letter-spacing:1px; text-transform:uppercase;">Watch:
-                    The Digital Twin Architecture (Brand Story)</span>
-                <span style="font-size:0.75rem; color:#666; margin-top:5px;">Coming Soon</span>
-            </div>
+        <!-- Brand Video -->
+        <div id="brandVideoContainer" class="video-container" style="max-width: 800px; margin: 3rem auto; border: 1px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
+            <video 
+                src="assets/promo.mp4" 
+                poster="assets/promo-thumb.jpg" 
+                controls 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                style="width: 100%; height: 100%; display: block;">
+                Your browser does not support the video tag.
+            </video>
         </div>
 
         <div class="infra-grid">
