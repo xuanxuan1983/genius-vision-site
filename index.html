@@ -713,15 +713,9 @@
 
         <!-- Video Placeholder -->
         <!-- Brand Video -->
-        <div id="brandVideoContainer" class="video-container" style="max-width: 800px; margin: 3rem auto; border: 1px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
-            <video 
-                src="assets/promo.mp4" 
-                poster="assets/promo-thumb.jpg" 
-                controls 
-                autoplay 
-                muted 
-                loop 
-                playsinline
+        <div id="brandVideoContainer" class="video-container"
+            style="max-width: 800px; margin: 3rem auto; border: 1px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
+            <video src="assets/promo.mp4" poster="assets/promo-thumb.jpg" controls autoplay muted loop playsinline
                 style="width: 100%; height: 100%; display: block;">
                 Your browser does not support the video tag.
             </video>
@@ -940,6 +934,12 @@
                 jiancangDesc: '资产分拣中心。微信文章一键资产化，自动流向飞书与 Notion。',
                 knowledgeTitle: '<i data-lucide="database"></i> 智库积淀',
                 knowledgeDesc: '基于 80+ 品牌数据，确保 Agent 输出具备真实的商业厚度。',
+                // Nav
+                home: '首页',
+                resources: '资源',
+                intelligence: '智慧引擎',
+                pricing: '定价',
+                deploy: '部署',
                 // Pricing L1
                 l1Name: 'LEVEL 1 / 工具版',
                 l1Title: '数字基建启动包',
@@ -985,6 +985,12 @@
                 jiancangDesc: 'Asset sorting center. One-click article archiving from WeChat, auto-synced to Lark & Notion.',
                 knowledgeTitle: '<i data-lucide="database"></i> Knowledge Base',
                 knowledgeDesc: 'Based on 80+ brand data, ensuring Agent outputs have real commercial depth.',
+                // Nav
+                home: 'Home',
+                resources: 'Resources',
+                intelligence: 'Intelligence',
+                pricing: 'Pricing',
+                deploy: 'Deploy Now',
                 // Pricing L1
                 l1Name: 'LEVEL 1 / Starter',
                 l1Title: 'Digital Infrastructure Kit',
@@ -1073,34 +1079,7 @@
             lucide.createIcons();
         }
     </script>
-    <script>
-        // Video placeholder click handler
-        document.addEventListener('DOMContentLoaded', function () {
-            const placeholder = document.querySelector('#brandVideoContainer .video-placeholder');
-            if (!placeholder) return;
-            placeholder.addEventListener('click', function () {
-                // Create video element
-                const video = document.createElement('video');
-                video.setAttribute('controls', '');
-                video.setAttribute('autoplay', '');
-                video.setAttribute('class', 'brand-video');
-                video.style.width = '100%';
-                video.style.height = '100%';
-                // Source – replace with actual video URL when ready
-                const source = document.createElement('source');
-                source.src = 'assets/video/video.mp4';
-                source.type = 'video/mp4';
-                video.appendChild(source);
-                // Optional WebM fallback
-                const sourceWebm = document.createElement('source');
-                sourceWebm.src = 'assets/video/video.webm';
-                sourceWebm.type = 'video/webm';
-                video.appendChild(sourceWebm);
-                // Replace placeholder with video element
-                placeholder.parentNode.replaceChild(video, placeholder);
-            });
-        });
-    </script>
+
 </body>
 
 </html>
