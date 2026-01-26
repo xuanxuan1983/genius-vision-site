@@ -599,6 +599,27 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Responsive Video Classes */
+        .desktop-only {
+            display: flex !important;
+        }
+
+        .mobile-only {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-only {
+                display: none !important;
+            }
+
+            .mobile-only {
+                display: flex !important;
+            }
         }
 
         /* Video Container Styles */
@@ -713,10 +734,19 @@
 
         <!-- Video Placeholder -->
         <!-- Brand Video -->
-        <div id="brandVideoContainer" class="video-container"
+        <div id="brandVideoContainer" class="video-container desktop-only"
             style="max-width: 800px; margin: 3rem auto; border: 1px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
             <video src="assets/promo.mp4" poster="assets/promo-thumb.jpg" controls autoplay muted loop playsinline
                 style="width: 100%; height: 100%; display: block;">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Brand Video (Mobile Vertical 9:16) -->
+        <div id="brandVideoContainerMobile" class="video-container mobile-only"
+            style="max-width: 400px; margin: 3rem auto; border: 1px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.6); padding-bottom: 177.77%;">
+            <video src="assets/promo_vertical.mp4" poster="assets/promo-thumb.jpg" controls autoplay muted loop
+                playsinline style="width: 100%; height: 100%; display: block; object-fit: cover;">
                 Your browser does not support the video tag.
             </video>
         </div>
